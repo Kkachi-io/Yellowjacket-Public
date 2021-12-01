@@ -2,6 +2,8 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
+/.idea/
+/.vscode/
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
@@ -9,9 +11,28 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
+/[Uu]serSettings
+
+/[Aa]ssets/Cafofo - Monster Sounds Pack/
+/[Aa]ssets/Character Movement Fundamentals/
+/[Aa]ssets/Fantasy Sounds Bundle/
+/[Aa]ssets/Fantasy_Ambience_Sounds_Pack/
+/[Aa]ssets/Free Asset - 2D Handcrafted Art
+/[Aa]ssets/GUI PRO Kit - Fantasy RPG
+/[Aa]ssets/ParadoxNotion/
+/[Aa]ssets/ParadoxNotion Resources/
+/[Aa]ssets/Plugins/Demigiant/DOTweenPro/
+/[Aa]ssets/Plugins/Demigiant/DOTweenPro Examples/
+/[Aa]ssets/Pro Radar Builder/
+/[Aa]ssets/Resources/Art/Enemies/LittleWeaver/LittleWeaver_Hit_Death.png
+/[Aa]ssets/Resources/Art/Enemies/LittleWeaver/LittleWeaver_Idle.png
+/[Aa]ssets/Resources/Art/Enemies/LittleWeaver/LittleWeaver_Run.png
+/[Aa]ssets/Resources/Audio
+/[Aa]ssets/Resources/Fonts
+/[Aa]ssets/TextMesh Pro/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
-!/[Aa]ssets/**/*.meta
+/[Aa]ssets/**/*.meta
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*

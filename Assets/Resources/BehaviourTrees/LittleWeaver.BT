@@ -1,0 +1,1412 @@
+{
+    "type": "NodeCanvas.BehaviourTrees.BehaviourTree",
+    "nodes": [
+        {
+            "_condition": {
+                "conditions": [
+                    {
+                        "method": {
+                            "_baseInfo": "Enemy|GetHealth|System.Int32",
+                            "_paramsInfo": ""
+                        },
+                        "parameters": [],
+                        "comparison": 1,
+                        "checkValue": {
+                            "_type": "System.Int32",
+                            "_value": {
+                                "$content": 0,
+                                "$type": "System.Int32"
+                            }
+                        },
+                        "overrideAgent": {
+                            "_type": "Enemy",
+                            "_name": "thisEnemy",
+                            "_targetVariableID": "5247d547-2108-4087-b698-67e2969654b1"
+                        },
+                        "$type": "NodeCanvas.Tasks.Conditions.CheckFunction_Multiplatform"
+                    },
+                    {
+                        "method": {
+                            "_baseInfo": "DistanceActivator|CheckIsActivated|System.Boolean",
+                            "_paramsInfo": ""
+                        },
+                        "parameters": [],
+                        "checkValue": {
+                            "_type": "System.Boolean",
+                            "_value": {
+                                "$content": true,
+                                "$type": "System.Boolean"
+                            }
+                        },
+                        "overrideAgent": {
+                            "_type": "DistanceActivator",
+                            "_name": "thisDistanceActivator",
+                            "_targetVariableID": "816127ed-67db-4a2f-a060-64ad227811de"
+                        },
+                        "$type": "NodeCanvas.Tasks.Conditions.CheckFunction_Multiplatform"
+                    }
+                ],
+                "$type": "NodeCanvas.Framework.ConditionList"
+            },
+            "_position": {
+                "x": 704.8442,
+                "y": -858.5728
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BinarySelector",
+            "$id": "0"
+        },
+        {
+            "_position": {
+                "x": 715.3198,
+                "y": -615.3267
+            },
+            "$type": "NodeCanvas.BehaviourTrees.Sequencer",
+            "$id": "1"
+        },
+        {
+            "_condition": {
+                "valueA": {
+                    "_name": "hasHero",
+                    "_targetVariableID": "b63667df-89f7-4942-924e-42ab7a7080a7"
+                },
+                "valueB": {
+
+                },
+                "$type": "NodeCanvas.Tasks.Conditions.CheckVariable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            },
+            "_position": {
+                "x": 698.8438,
+                "y": -407.2451
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BinarySelector",
+            "$id": "2"
+        },
+        {
+            "_position": {
+                "x": 474.7172,
+                "y": -282.6968
+            },
+            "$type": "NodeCanvas.BehaviourTrees.Sequencer",
+            "$id": "3"
+        },
+        {
+            "_action": {
+                "method": {
+                    "_baseInfo": "Enemy|StopRunAudio|System.Void",
+                    "_paramsInfo": ""
+                },
+                "parameters": [],
+                "returnValue": {
+
+                },
+                "overrideAgent": {
+                    "_type": "Enemy",
+                    "_name": "thisEnemy",
+                    "_targetVariableID": "5247d547-2108-4087-b698-67e2969654b1"
+                },
+                "$type": "NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"
+            },
+            "_position": {
+                "x": 249.8406,
+                "y": -108.6703
+            },
+            "$type": "NodeCanvas.BehaviourTrees.ActionNode",
+            "$id": "4"
+        },
+        {
+            "_condition": {
+                "valueA": {
+                    "_name": "needsToReset",
+                    "_targetVariableID": "57c4d5fc-2dda-49d9-ba36-f00de4485516"
+                },
+                "valueB": {
+                    "_value": true
+                },
+                "$type": "NodeCanvas.Tasks.Conditions.CheckBoolean"
+            },
+            "_position": {
+                "x": 464.5072,
+                "y": -108.6264
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BinarySelector",
+            "$id": "5"
+        },
+        {
+            "_condition": {
+                "method": {
+                    "_baseInfo": "Enemy|GetHealth|System.Int32",
+                    "_paramsInfo": ""
+                },
+                "parameters": [],
+                "comparison": 4,
+                "checkValue": {
+                    "_type": "System.Int32",
+                    "_value": {
+                        "$content": 0,
+                        "$type": "System.Int32"
+                    }
+                },
+                "overrideAgent": {
+                    "_type": "Enemy",
+                    "_name": "thisEnemy",
+                    "_targetVariableID": "5247d547-2108-4087-b698-67e2969654b1"
+                },
+                "$type": "NodeCanvas.Tasks.Conditions.CheckFunction_Multiplatform"
+            },
+            "_position": {
+                "x": 246.4308,
+                "y": 46.48432
+            },
+            "$type": "NodeCanvas.BehaviourTrees.Interruptor",
+            "$id": "6"
+        },
+        {
+            "_tag": "",
+            "_position": {
+                "x": 127.3418,
+                "y": 241.3313
+            },
+            "_comment": "Reset Patrol\n",
+            "$type": "NodeCanvas.BehaviourTrees.Sequencer",
+            "$id": "7"
+        },
+        {
+            "_action": {
+                "executionMode": 1,
+                "actions": [
+                    {
+                        "patrolZone": {
+                            "_name": "patrolZone",
+                            "_targetVariableID": "4f4c737b-bb8f-4947-98e7-baeeceae661b"
+                        },
+                        "animator": {
+                            "_name": "animator",
+                            "_targetVariableID": "c67ba894-6898-400e-82e9-ccaae42583f0"
+                        },
+                        "animCurve": {
+                            "_name": "patrolAnimCurve",
+                            "_targetVariableID": "d2561c2b-7526-4c3d-a293-770cd1c97fe1"
+                        },
+                        "horizontalInput": {
+                            "_name": "horizontalInput",
+                            "_targetVariableID": "ff134012-7a6c-4702-b673-ca06ce4e61c4"
+                        },
+                        "topSpeed": {
+                            "_name": "topSpeed_Walk",
+                            "_targetVariableID": "6942905d-4e3c-4ef4-9cf8-1be657ec48eb"
+                        },
+                        "timeToTopSpeed": {
+                            "_name": "accelerationTime",
+                            "_targetVariableID": "03c1c346-96fa-4d52-acd1-333be2c9da64"
+                        },
+                        "moveAnimSpeed": {
+                            "_name": "walkAnimSpeed",
+                            "_targetVariableID": "9f5b7627-4296-47bb-9b93-a3bfbf3521d5"
+                        },
+                        "$type": "NodeCanvas.Tasks.Actions.EnemyResetPatrol"
+                    },
+                    {
+                        "method": {
+                            "_baseInfo": "Enemy|PlayMovementAudio|System.Void",
+                            "_paramsInfo": ""
+                        },
+                        "parameters": [],
+                        "returnValue": {
+
+                        },
+                        "overrideAgent": {
+                            "_type": "Enemy",
+                            "_name": "thisEnemy",
+                            "_targetVariableID": "5247d547-2108-4087-b698-67e2969654b1"
+                        },
+                        "$type": "NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"
+                    }
+                ],
+                "$type": "NodeCanvas.Framework.ActionList"
+            },
+            "_position": {
+                "x": -80.35373,
+                "y": 339.6814
+            },
+            "$type": "NodeCanvas.BehaviourTrees.ActionNode",
+            "$id": "8"
+        },
+        {
+            "_action": {
+                "boolVariable": {
+                    "_name": "needsToReset",
+                    "_targetVariableID": "57c4d5fc-2dda-49d9-ba36-f00de4485516"
+                },
+                "setTo": 0,
+                "$type": "NodeCanvas.Tasks.Actions.SetBoolean"
+            },
+            "_position": {
+                "x": 167.9994,
+                "y": 342.4572
+            },
+            "$type": "NodeCanvas.BehaviourTrees.ActionNode",
+            "$id": "9"
+        },
+        {
+            "_condition": {
+                "method": {
+                    "_baseInfo": "Enemy|GetHealth|System.Int32",
+                    "_paramsInfo": ""
+                },
+                "parameters": [],
+                "comparison": 4,
+                "checkValue": {
+                    "_type": "System.Int32",
+                    "_value": {
+                        "$content": 0,
+                        "$type": "System.Int32"
+                    }
+                },
+                "overrideAgent": {
+                    "_type": "Enemy",
+                    "_name": "thisEnemy",
+                    "_targetVariableID": "5247d547-2108-4087-b698-67e2969654b1"
+                },
+                "$type": "NodeCanvas.Tasks.Conditions.CheckFunction_Multiplatform"
+            },
+            "_position": {
+                "x": 499.095,
+                "y": 53.81821
+            },
+            "$type": "NodeCanvas.BehaviourTrees.Interruptor",
+            "$id": "10"
+        },
+        {
+            "_position": {
+                "x": 528.4297,
+                "y": 212.1406
+            },
+            "_comment": "Patrol",
+            "$type": "NodeCanvas.BehaviourTrees.Sequencer",
+            "$id": "11"
+        },
+        {
+            "_action": {
+                "agentTransform": {
+                    "_name": "agentTransform",
+                    "_targetVariableID": "7ee63277-f4f8-4c4f-a2b9-f7424a8fd651"
+                },
+                "hasLeftPatrolZone": {
+                    "_name": "hasLeftPatrolZone",
+                    "_targetVariableID": "6bd087fc-9fab-4280-bf57-01eab4b2d74b"
+                },
+                "facingLeft": {
+                    "_name": "facingLeft",
+                    "_targetVariableID": "3f41dcea-62f5-49fe-ae67-3e9caf33f167"
+                },
+                "hasHero": {
+                    "_name": "hasHero",
+                    "_targetVariableID": "b63667df-89f7-4942-924e-42ab7a7080a7"
+                },
+                "hero": {
+                    "_name": "heroTransform",
+                    "_targetVariableID": "e5396577-1833-45c8-aa85-97872cfc8ae3"
+                },
+                "$type": "NodeCanvas.Tasks.Actions.DetermineFacingDirection"
+            },
+            "_position": {
+                "x": 285.5334,
+                "y": 502.866
+            },
+            "$type": "NodeCanvas.BehaviourTrees.ActionNode",
+            "$id": "12"
+        },
+        {
+            "_condition": {
+                "valueA": {
+                    "_name": "hasLeftPatrolZone",
+                    "_targetVariableID": "6bd087fc-9fab-4280-bf57-01eab4b2d74b"
+                },
+                "valueB": {
+                    "_value": true
+                },
+                "$type": "NodeCanvas.Tasks.Conditions.CheckBoolean"
+            },
+            "_position": {
+                "x": 590.0,
+                "y": 381.0
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BinarySelector",
+            "$id": "13"
+        },
+        {
+            "_position": {
+                "x": 437.0,
+                "y": 691.0
+            },
+            "_comment": "Return to Patrol Zone",
+            "$type": "NodeCanvas.BehaviourTrees.Sequencer",
+            "$id": "14"
+        },
+        {
+            "_condition": {
+                "checkMode": 1,
+                "conditions": [
+                    {
+                        "variable": {
+                            "_name": "hasHero",
+                            "_targetVariableID": "b63667df-89f7-4942-924e-42ab7a7080a7"
+                        },
+                        "$type": "NodeCanvas.Tasks.Conditions.CheckNull"
+                    },
+                    {
+                        "method": {
+                            "_baseInfo": "Enemy|GetHealth|System.Int32",
+                            "_paramsInfo": ""
+                        },
+                        "parameters": [],
+                        "comparison": 4,
+                        "checkValue": {
+                            "_type": "System.Int32",
+                            "_value": {
+                                "$content": 0,
+                                "$type": "System.Int32"
+                            }
+                        },
+                        "overrideAgent": {
+                            "_type": "Enemy",
+                            "_name": "thisEnemy",
+                            "_targetVariableID": "5247d547-2108-4087-b698-67e2969654b1"
+                        },
+                        "$type": "NodeCanvas.Tasks.Conditions.CheckFunction_Multiplatform"
+                    }
+                ],
+                "$type": "NodeCanvas.Framework.ConditionList"
+            },
+            "_position": {
+                "x": 195.0974,
+                "y": 799.1411
+            },
+            "$type": "NodeCanvas.BehaviourTrees.Interruptor",
+            "$id": "15"
+        },
+        {
+            "_action": {
+                "executionMode": 1,
+                "actions": [
+                    {
+                        "patrolZone": {
+                            "_name": "patrolZone",
+                            "_targetVariableID": "4f4c737b-bb8f-4947-98e7-baeeceae661b"
+                        },
+                        "animator": {
+                            "_name": "animator",
+                            "_targetVariableID": "c67ba894-6898-400e-82e9-ccaae42583f0"
+                        },
+                        "animCurve": {
+                            "_name": "patrolAnimCurve",
+                            "_targetVariableID": "d2561c2b-7526-4c3d-a293-770cd1c97fe1"
+                        },
+                        "horizontalInput": {
+                            "_name": "horizontalInput",
+                            "_targetVariableID": "ff134012-7a6c-4702-b673-ca06ce4e61c4"
+                        },
+                        "topSpeed": {
+                            "_name": "topSpeed_Walk",
+                            "_targetVariableID": "6942905d-4e3c-4ef4-9cf8-1be657ec48eb"
+                        },
+                        "timeToTopSpeed": {
+                            "_name": "accelerationTime",
+                            "_targetVariableID": "03c1c346-96fa-4d52-acd1-333be2c9da64"
+                        },
+                        "moveAnimSpeed": {
+                            "_name": "walkAnimSpeed",
+                            "_targetVariableID": "9f5b7627-4296-47bb-9b93-a3bfbf3521d5"
+                        },
+                        "$type": "NodeCanvas.Tasks.Actions.EnemyResetPatrol"
+                    },
+                    {
+                        "method": {
+                            "_baseInfo": "Enemy|PlayMovementAudio|System.Void",
+                            "_paramsInfo": ""
+                        },
+                        "parameters": [],
+                        "returnValue": {
+
+                        },
+                        "overrideAgent": {
+                            "_type": "Enemy",
+                            "_name": "thisEnemy",
+                            "_targetVariableID": "5247d547-2108-4087-b698-67e2969654b1"
+                        },
+                        "$type": "NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"
+                    }
+                ],
+                "$type": "NodeCanvas.Framework.ActionList"
+            },
+            "_position": {
+                "x": 176.3104,
+                "y": 935.0081
+            },
+            "$type": "NodeCanvas.BehaviourTrees.ActionNode",
+            "$id": "16"
+        },
+        {
+            "_action": {
+                "method": {
+                    "_baseInfo": "Enemy|PlayMovementAudio|System.Void",
+                    "_paramsInfo": ""
+                },
+                "parameters": [],
+                "returnValue": {
+
+                },
+                "overrideAgent": {
+                    "_type": "Enemy",
+                    "_name": "thisEnemy",
+                    "_targetVariableID": "5247d547-2108-4087-b698-67e2969654b1"
+                },
+                "$type": "NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"
+            },
+            "_position": {
+                "x": 425.0,
+                "y": 927.0
+            },
+            "$type": "NodeCanvas.BehaviourTrees.ActionNode",
+            "$id": "17"
+        },
+        {
+            "_position": {
+                "x": 853.0,
+                "y": 685.0
+            },
+            "_comment": "Patrolling",
+            "$type": "NodeCanvas.BehaviourTrees.Sequencer",
+            "$id": "18"
+        },
+        {
+            "_condition": {
+                "checkMode": 1,
+                "conditions": [
+                    {
+                        "variable": {
+                            "_name": "hasHero",
+                            "_targetVariableID": "b63667df-89f7-4942-924e-42ab7a7080a7"
+                        },
+                        "$type": "NodeCanvas.Tasks.Conditions.CheckNull"
+                    },
+                    {
+                        "valueA": {
+                            "_name": "hasLeftPatrolZone",
+                            "_targetVariableID": "6bd087fc-9fab-4280-bf57-01eab4b2d74b"
+                        },
+                        "valueB": {
+                            "_value": true
+                        },
+                        "$type": "NodeCanvas.Tasks.Conditions.CheckBoolean"
+                    },
+                    {
+                        "method": {
+                            "_baseInfo": "Enemy|GetHealth|System.Int32",
+                            "_paramsInfo": ""
+                        },
+                        "parameters": [],
+                        "comparison": 4,
+                        "checkValue": {
+                            "_type": "System.Int32",
+                            "_value": {
+                                "$content": 0,
+                                "$type": "System.Int32"
+                            }
+                        },
+                        "overrideAgent": {
+                            "_type": "Enemy",
+                            "_name": "thisEnemy",
+                            "_targetVariableID": "5247d547-2108-4087-b698-67e2969654b1"
+                        },
+                        "$type": "NodeCanvas.Tasks.Conditions.CheckFunction_Multiplatform"
+                    }
+                ],
+                "$type": "NodeCanvas.Framework.ConditionList"
+            },
+            "_position": {
+                "x": 709.4297,
+                "y": 806.141
+            },
+            "$type": "NodeCanvas.BehaviourTrees.Interruptor",
+            "$id": "19"
+        },
+        {
+            "_action": {
+                "executionMode": 1,
+                "actions": [
+                    {
+                        "animator": {
+                            "_name": "animator",
+                            "_targetVariableID": "c67ba894-6898-400e-82e9-ccaae42583f0"
+                        },
+                        "animCurve": {
+                            "_name": "patrolAnimCurve",
+                            "_targetVariableID": "d2561c2b-7526-4c3d-a293-770cd1c97fe1"
+                        },
+                        "horizontalInput": {
+                            "_name": "horizontalInput",
+                            "_targetVariableID": "ff134012-7a6c-4702-b673-ca06ce4e61c4"
+                        },
+                        "patrolTime": {
+                            "_name": "patrolWalkTime",
+                            "_targetVariableID": "16dbfaca-1747-4c37-98b8-855e1006fdc8"
+                        },
+                        "topSpeed": {
+                            "_name": "topSpeed_Walk",
+                            "_targetVariableID": "6942905d-4e3c-4ef4-9cf8-1be657ec48eb"
+                        },
+                        "timeToTopSpeed": {
+                            "_name": "accelerationTime",
+                            "_targetVariableID": "03c1c346-96fa-4d52-acd1-333be2c9da64"
+                        },
+                        "facingLeft": {
+                            "_name": "facingLeft",
+                            "_targetVariableID": "3f41dcea-62f5-49fe-ae67-3e9caf33f167"
+                        },
+                        "hasLeftPatrolZone": {
+                            "_name": "hasLeftPatrolZone",
+                            "_targetVariableID": "6bd087fc-9fab-4280-bf57-01eab4b2d74b"
+                        },
+                        "moveAnimSpeed": {
+                            "_name": "walkAnimSpeed",
+                            "_targetVariableID": "9f5b7627-4296-47bb-9b93-a3bfbf3521d5"
+                        },
+                        "$type": "NodeCanvas.Tasks.Actions.EnemyPatrol"
+                    },
+                    {
+                        "method": {
+                            "_baseInfo": "Enemy|PlayMovementAudio|System.Void",
+                            "_paramsInfo": ""
+                        },
+                        "parameters": [],
+                        "returnValue": {
+
+                        },
+                        "overrideAgent": {
+                            "_type": "Enemy",
+                            "_name": "thisEnemy",
+                            "_targetVariableID": "5247d547-2108-4087-b698-67e2969654b1"
+                        },
+                        "$type": "NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"
+                    }
+                ],
+                "$type": "NodeCanvas.Framework.ActionList"
+            },
+            "_position": {
+                "x": 697.637,
+                "y": 967.244
+            },
+            "$type": "NodeCanvas.BehaviourTrees.ActionNode",
+            "$id": "20"
+        },
+        {
+            "_condition": {
+                "checkMode": 1,
+                "conditions": [
+                    {
+                        "variable": {
+                            "_name": "hasHero",
+                            "_targetVariableID": "b63667df-89f7-4942-924e-42ab7a7080a7"
+                        },
+                        "$type": "NodeCanvas.Tasks.Conditions.CheckNull"
+                    },
+                    {
+                        "valueA": {
+                            "_name": "hasLeftPatrolZone",
+                            "_targetVariableID": "6bd087fc-9fab-4280-bf57-01eab4b2d74b"
+                        },
+                        "valueB": {
+                            "_value": true
+                        },
+                        "$type": "NodeCanvas.Tasks.Conditions.CheckBoolean"
+                    },
+                    {
+                        "method": {
+                            "_baseInfo": "Enemy|GetHealth|System.Int32",
+                            "_paramsInfo": ""
+                        },
+                        "parameters": [],
+                        "comparison": 4,
+                        "checkValue": {
+                            "_type": "System.Int32",
+                            "_value": {
+                                "$content": 0,
+                                "$type": "System.Int32"
+                            }
+                        },
+                        "overrideAgent": {
+                            "_type": "Enemy",
+                            "_name": "thisEnemy",
+                            "_targetVariableID": "5247d547-2108-4087-b698-67e2969654b1"
+                        },
+                        "$type": "NodeCanvas.Tasks.Conditions.CheckFunction_Multiplatform"
+                    }
+                ],
+                "$type": "NodeCanvas.Framework.ConditionList"
+            },
+            "_position": {
+                "x": 935.4297,
+                "y": 811.141
+            },
+            "$type": "NodeCanvas.BehaviourTrees.Interruptor",
+            "$id": "21"
+        },
+        {
+            "_action": {
+                "waitTime": {
+                    "_value": 1.0
+                },
+                "$type": "NodeCanvas.Tasks.Actions.Wait"
+            },
+            "_position": {
+                "x": 988.188,
+                "y": 961.141
+            },
+            "$type": "NodeCanvas.BehaviourTrees.ActionNode",
+            "$id": "22"
+        },
+        {
+            "_condition": {
+                "vectorA": {
+                    "_name": "heroTransform",
+                    "_targetVariableID": "e5396577-1833-45c8-aa85-97872cfc8ae3"
+                },
+                "vectorB": {
+                    "_name": "agentTransform",
+                    "_targetVariableID": "7ee63277-f4f8-4c4f-a2b9-f7424a8fd651"
+                },
+                "comparison": 2,
+                "distance": {
+                    "_name": "attackDistance",
+                    "_targetVariableID": "aa3db3f9-5bc9-40e7-85f7-336ad136e282"
+                },
+                "$type": "NodeCanvas.Tasks.Conditions.CheckVectorDistance"
+            },
+            "_position": {
+                "x": 1346.018,
+                "y": 69.99044
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BinarySelector",
+            "$id": "23"
+        },
+        {
+            "_position": {
+                "x": 1173.318,
+                "y": 226.664
+            },
+            "$type": "NodeCanvas.BehaviourTrees.Sequencer",
+            "$id": "24"
+        },
+        {
+            "_condition": {
+                "checkMode": 1,
+                "conditions": [
+                    {
+                        "variable": {
+                            "_name": "hasHero",
+                            "_targetVariableID": "b63667df-89f7-4942-924e-42ab7a7080a7"
+                        },
+                        "$type": "NodeCanvas.Tasks.Conditions.CheckNull"
+                    },
+                    {
+                        "method": {
+                            "_baseInfo": "Enemy|GetHealth|System.Int32",
+                            "_paramsInfo": ""
+                        },
+                        "parameters": [],
+                        "comparison": 4,
+                        "checkValue": {
+                            "_type": "System.Int32",
+                            "_value": {
+                                "$content": 0,
+                                "$type": "System.Int32"
+                            }
+                        },
+                        "overrideAgent": {
+                            "_type": "Enemy",
+                            "_name": "thisEnemy",
+                            "_targetVariableID": "5247d547-2108-4087-b698-67e2969654b1"
+                        },
+                        "$type": "NodeCanvas.Tasks.Conditions.CheckFunction_Multiplatform"
+                    }
+                ],
+                "$type": "NodeCanvas.Framework.ConditionList"
+            },
+            "_position": {
+                "x": 1016.67,
+                "y": 367.6653
+            },
+            "$type": "NodeCanvas.BehaviourTrees.Interruptor",
+            "$id": "25"
+        },
+        {
+            "_action": {
+                "executionMode": 1,
+                "actions": [
+                    {
+                        "animator": {
+                            "_name": "animator",
+                            "_targetVariableID": "c67ba894-6898-400e-82e9-ccaae42583f0"
+                        },
+                        "$type": "NodeCanvas.Tasks.Actions.EnemyAttack"
+                    },
+                    {
+                        "method": {
+                            "_baseInfo": "Enemy|StopRunAudio|System.Void",
+                            "_paramsInfo": ""
+                        },
+                        "parameters": [],
+                        "returnValue": {
+
+                        },
+                        "overrideAgent": {
+                            "_type": "Enemy",
+                            "_name": "thisEnemy",
+                            "_targetVariableID": "5247d547-2108-4087-b698-67e2969654b1"
+                        },
+                        "$type": "NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"
+                    }
+                ],
+                "$type": "NodeCanvas.Framework.ActionList"
+            },
+            "_position": {
+                "x": 1025.321,
+                "y": 510.6607
+            },
+            "$type": "NodeCanvas.BehaviourTrees.ActionNode",
+            "$id": "26"
+        },
+        {
+            "_position": {
+                "x": 1576.989,
+                "y": 338.7556
+            },
+            "_comment": "Chase Hero",
+            "$type": "NodeCanvas.BehaviourTrees.Sequencer",
+            "$id": "27"
+        },
+        {
+            "_action": {
+                "boolVariable": {
+                    "_name": "needsToReset",
+                    "_targetVariableID": "57c4d5fc-2dda-49d9-ba36-f00de4485516"
+                },
+                "$type": "NodeCanvas.Tasks.Actions.SetBoolean"
+            },
+            "_position": {
+                "x": 1353.105,
+                "y": 611.8801
+            },
+            "$type": "NodeCanvas.BehaviourTrees.ActionNode",
+            "$id": "28"
+        },
+        {
+            "_condition": {
+                "checkMode": 1,
+                "conditions": [
+                    {
+                        "variable": {
+                            "_name": "hasHero",
+                            "_targetVariableID": "b63667df-89f7-4942-924e-42ab7a7080a7"
+                        },
+                        "$type": "NodeCanvas.Tasks.Conditions.CheckNull"
+                    },
+                    {
+                        "method": {
+                            "_baseInfo": "Enemy|GetHealth|System.Int32",
+                            "_paramsInfo": ""
+                        },
+                        "parameters": [],
+                        "comparison": 4,
+                        "checkValue": {
+                            "_type": "System.Int32",
+                            "_value": {
+                                "$content": 0,
+                                "$type": "System.Int32"
+                            }
+                        },
+                        "overrideAgent": {
+                            "_type": "Enemy",
+                            "_name": "thisEnemy",
+                            "_targetVariableID": "5247d547-2108-4087-b698-67e2969654b1"
+                        },
+                        "$type": "NodeCanvas.Tasks.Conditions.CheckFunction_Multiplatform"
+                    }
+                ],
+                "$type": "NodeCanvas.Framework.ConditionList"
+            },
+            "_position": {
+                "x": 1567.869,
+                "y": 497.3043
+            },
+            "$type": "NodeCanvas.BehaviourTrees.Interruptor",
+            "$id": "29"
+        },
+        {
+            "_action": {
+                "agentTransform": {
+                    "_name": "agentTransform",
+                    "_targetVariableID": "7ee63277-f4f8-4c4f-a2b9-f7424a8fd651"
+                },
+                "hasLeftPatrolZone": {
+
+                },
+                "facingLeft": {
+                    "_name": "facingLeft",
+                    "_targetVariableID": "3f41dcea-62f5-49fe-ae67-3e9caf33f167"
+                },
+                "hasHero": {
+                    "_name": "hasHero",
+                    "_targetVariableID": "b63667df-89f7-4942-924e-42ab7a7080a7"
+                },
+                "hero": {
+                    "_name": "heroTransform",
+                    "_targetVariableID": "e5396577-1833-45c8-aa85-97872cfc8ae3"
+                },
+                "$type": "NodeCanvas.Tasks.Actions.DetermineFacingDirection"
+            },
+            "_position": {
+                "x": 1586.883,
+                "y": 627.8931
+            },
+            "$type": "NodeCanvas.BehaviourTrees.ActionNode",
+            "$id": "30"
+        },
+        {
+            "_condition": {
+                "checkMode": 1,
+                "conditions": [
+                    {
+                        "variable": {
+                            "_name": "hasHero",
+                            "_targetVariableID": "b63667df-89f7-4942-924e-42ab7a7080a7"
+                        },
+                        "$type": "NodeCanvas.Tasks.Conditions.CheckNull"
+                    },
+                    {
+                        "method": {
+                            "_baseInfo": "Enemy|GetHealth|System.Int32",
+                            "_paramsInfo": ""
+                        },
+                        "parameters": [],
+                        "comparison": 4,
+                        "checkValue": {
+                            "_type": "System.Int32",
+                            "_value": {
+                                "$content": 0,
+                                "$type": "System.Int32"
+                            }
+                        },
+                        "overrideAgent": {
+                            "_type": "Enemy",
+                            "_name": "thisEnemy",
+                            "_targetVariableID": "5247d547-2108-4087-b698-67e2969654b1"
+                        },
+                        "$type": "NodeCanvas.Tasks.Conditions.CheckFunction_Multiplatform"
+                    }
+                ],
+                "$type": "NodeCanvas.Framework.ConditionList"
+            },
+            "_position": {
+                "x": 1800.869,
+                "y": 494.3043
+            },
+            "$type": "NodeCanvas.BehaviourTrees.Interruptor",
+            "$id": "31"
+        },
+        {
+            "_action": {
+                "executionMode": 1,
+                "actions": [
+                    {
+                        "hasHero": {
+                            "_name": "hasHero",
+                            "_targetVariableID": "b63667df-89f7-4942-924e-42ab7a7080a7"
+                        },
+                        "hasTransform": {
+
+                        },
+                        "animator": {
+                            "_name": "animator",
+                            "_targetVariableID": "c67ba894-6898-400e-82e9-ccaae42583f0"
+                        },
+                        "animCurve": {
+                            "_name": "patrolAnimCurve",
+                            "_targetVariableID": "d2561c2b-7526-4c3d-a293-770cd1c97fe1"
+                        },
+                        "horizontalInput": {
+                            "_name": "horizontalInput",
+                            "_targetVariableID": "ff134012-7a6c-4702-b673-ca06ce4e61c4"
+                        },
+                        "topSpeed": {
+                            "_name": "topSpeed_Chase",
+                            "_targetVariableID": "549d1ef3-4ee3-4001-83ad-5fb4510c24cc"
+                        },
+                        "timeToTopSpeed": {
+                            "_name": "accelerationTime",
+                            "_targetVariableID": "03c1c346-96fa-4d52-acd1-333be2c9da64"
+                        },
+                        "facingLeft": {
+                            "_name": "facingLeft",
+                            "_targetVariableID": "3f41dcea-62f5-49fe-ae67-3e9caf33f167"
+                        },
+                        "moveAnimSpeed": {
+                            "_name": "runAnimSpeed",
+                            "_targetVariableID": "7d0918bf-c149-4641-baf6-f7a7c4f46d96"
+                        },
+                        "$type": "NodeCanvas.Tasks.Actions.EnemyChase"
+                    },
+                    {
+                        "method": {
+                            "_baseInfo": "Enemy|PlayRunAudio|System.Void",
+                            "_paramsInfo": ""
+                        },
+                        "parameters": [],
+                        "returnValue": {
+
+                        },
+                        "overrideAgent": {
+                            "_type": "Enemy",
+                            "_name": "thisEnemy",
+                            "_targetVariableID": "5247d547-2108-4087-b698-67e2969654b1"
+                        },
+                        "$type": "NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"
+                    }
+                ],
+                "$type": "NodeCanvas.Framework.ActionList"
+            },
+            "_position": {
+                "x": 1814.445,
+                "y": 627.3163
+            },
+            "$type": "NodeCanvas.BehaviourTrees.ActionNode",
+            "$id": "32"
+        },
+        {
+            "_position": {
+                "x": 897.3224,
+                "y": -611.9926
+            },
+            "$type": "NodeCanvas.BehaviourTrees.Sequencer",
+            "$id": "33"
+        },
+        {
+            "_action": {
+                "valueA": {
+                    "_name": "horizontalInput",
+                    "_targetVariableID": "ff134012-7a6c-4702-b673-ca06ce4e61c4"
+                },
+                "valueB": {
+
+                },
+                "$type": "NodeCanvas.Tasks.Actions.SetFloat"
+            },
+            "_position": {
+                "x": 1013.321,
+                "y": -503.9938
+            },
+            "$type": "NodeCanvas.BehaviourTrees.ActionNode",
+            "$id": "34"
+        },
+        {
+            "_condition": {
+                "checkMode": 1,
+                "conditions": [
+                    {
+                        "variable": {
+                            "_name": "hasHero",
+                            "_targetVariableID": "b63667df-89f7-4942-924e-42ab7a7080a7"
+                        },
+                        "$type": "NodeCanvas.Tasks.Conditions.CheckNull"
+                    },
+                    {
+                        "method": {
+                            "_baseInfo": "Enemy|GetHealth|System.Int32",
+                            "_paramsInfo": ""
+                        },
+                        "parameters": [],
+                        "comparison": 4,
+                        "checkValue": {
+                            "_type": "System.Int32",
+                            "_value": {
+                                "$content": 0,
+                                "$type": "System.Int32"
+                            }
+                        },
+                        "overrideAgent": {
+                            "_type": "Enemy",
+                            "_name": "thisEnemy",
+                            "_targetVariableID": "5247d547-2108-4087-b698-67e2969654b1"
+                        },
+                        "$type": "NodeCanvas.Tasks.Conditions.CheckFunction_Multiplatform"
+                    }
+                ],
+                "$type": "NodeCanvas.Framework.ConditionList"
+            },
+            "_position": {
+                "x": 1250.666,
+                "y": 369.6646
+            },
+            "$type": "NodeCanvas.BehaviourTrees.Interruptor",
+            "$id": "35"
+        },
+        {
+            "_action": {
+                "method": {
+                    "_baseInfo": "UnityEngine.Weapon|Attack|System.Void",
+                    "_paramsInfo": ""
+                },
+                "parameters": [],
+                "returnValue": {
+
+                },
+                "overrideAgent": {
+                    "_type": "UnityEngine.Weapon",
+                    "_name": "weapon",
+                    "_targetVariableID": "bc709b81-e2cc-4aea-b16d-a46c62ce675d"
+                },
+                "$type": "NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"
+            },
+            "_position": {
+                "x": 1291.564,
+                "y": 507.9139
+            },
+            "_comment": "",
+            "$type": "NodeCanvas.BehaviourTrees.ActionNode",
+            "$id": "36"
+        }
+    ],
+    "connections": [
+        {
+            "_sourceNode": {
+                "$ref": "0"
+            },
+            "_targetNode": {
+                "$ref": "1"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "0"
+            },
+            "_targetNode": {
+                "$ref": "33"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "1"
+            },
+            "_targetNode": {
+                "$ref": "2"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "2"
+            },
+            "_targetNode": {
+                "$ref": "3"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "2"
+            },
+            "_targetNode": {
+                "$ref": "23"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "3"
+            },
+            "_targetNode": {
+                "$ref": "4"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "3"
+            },
+            "_targetNode": {
+                "$ref": "5"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "5"
+            },
+            "_targetNode": {
+                "$ref": "6"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "5"
+            },
+            "_targetNode": {
+                "$ref": "10"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "6"
+            },
+            "_targetNode": {
+                "$ref": "7"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "7"
+            },
+            "_targetNode": {
+                "$ref": "8"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "7"
+            },
+            "_targetNode": {
+                "$ref": "9"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "10"
+            },
+            "_targetNode": {
+                "$ref": "11"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "11"
+            },
+            "_targetNode": {
+                "$ref": "12"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "11"
+            },
+            "_targetNode": {
+                "$ref": "13"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "13"
+            },
+            "_targetNode": {
+                "$ref": "14"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "13"
+            },
+            "_targetNode": {
+                "$ref": "18"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "14"
+            },
+            "_targetNode": {
+                "$ref": "15"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "14"
+            },
+            "_targetNode": {
+                "$ref": "17"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "15"
+            },
+            "_targetNode": {
+                "$ref": "16"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "18"
+            },
+            "_targetNode": {
+                "$ref": "19"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "18"
+            },
+            "_targetNode": {
+                "$ref": "21"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "19"
+            },
+            "_targetNode": {
+                "$ref": "20"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "21"
+            },
+            "_targetNode": {
+                "$ref": "22"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "23"
+            },
+            "_targetNode": {
+                "$ref": "24"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "23"
+            },
+            "_targetNode": {
+                "$ref": "27"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "24"
+            },
+            "_targetNode": {
+                "$ref": "25"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "25"
+            },
+            "_targetNode": {
+                "$ref": "26"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "27"
+            },
+            "_targetNode": {
+                "$ref": "28"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "27"
+            },
+            "_targetNode": {
+                "$ref": "29"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "27"
+            },
+            "_targetNode": {
+                "$ref": "31"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "29"
+            },
+            "_targetNode": {
+                "$ref": "30"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "31"
+            },
+            "_targetNode": {
+                "$ref": "32"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "33"
+            },
+            "_targetNode": {
+                "$ref": "34"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        },
+        {
+            "_sourceNode": {
+                "$ref": "35"
+            },
+            "_targetNode": {
+                "$ref": "36"
+            },
+            "$type": "NodeCanvas.BehaviourTrees.BTConnection"
+        }
+    ],
+    "canvasGroups": [],
+    "localBlackboard": {
+        "_variables": {
+            "needsToReset": {
+                "_value": true,
+                "_name": "needsToReset",
+                "_id": "57c4d5fc-2dda-49d9-ba36-f00de4485516",
+                "$type": "NodeCanvas.Framework.Variable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            }
+        }
+    },
+    "derivedData": {
+        "repeat": true,
+        "$type": "NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"
+    }
+}
